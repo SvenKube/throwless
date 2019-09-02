@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/SvenKube/throwless.git"
   },
-  "author": "Sven Kube <mail@sven-kube.de>",
+  "author": "Sven Kube <throwless@sven-kube.de>",
   "license": "MIT",
   "keywords": [
     "result",
