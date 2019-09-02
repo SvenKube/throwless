@@ -1,7 +1,7 @@
 {
   "name": "throwless",
   "version": "1.0.0",
-  "description": "",
+  "description": "The Result and Option types from Rust ported to TypeScript.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -11,8 +11,16 @@
     "type": "git",
     "url": "git+https://github.com/SvenKube/throwless.git"
   },
-  "author": "",
+  "author": "Sven Kube <mail@sven-kube.de>",
   "license": "MIT",
+  "keywords": [
+    "result",
+    "option",
+    "error-handling",
+    "exception",
+    "throw",
+    "catch"
+  ],
   "bugs": {
     "url": "https://github.com/SvenKube/throwless/issues"
   },
