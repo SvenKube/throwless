@@ -8,7 +8,7 @@ export const throwless = <T, E>(fn: () => T): Result<T, E> => {
     }
 };
 
-export const throwlessAsync = async <T, E>(fn: () => T): Promise<Result<T, E>> => {
+export const throwlessAsync = async <T, E>(fn: () => Promise<T>): Promise<Result<T, E>> => {
     try{
         const returnValue = await fn();
         return Promise.resolve(ok(returnValue));
