@@ -1,4 +1,4 @@
-# Throwless
+# Throwless [![Build Status](https://travis-ci.org/SvenKube/throwless.svg?branch=master)](https://travis-ci.org/SvenKube/throwless)
 
 ## Description
 The `Result` and `Option` type from Rust ported to TypeScript.
