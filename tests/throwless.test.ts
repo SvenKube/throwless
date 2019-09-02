@@ -1,6 +1,6 @@
 import {Result, throwlessAsync} from "../src";
 
-describe("Tests for throwless wrapping", () => {
+describe("Tests for throwlessAsync wrapping", () => {
 
     it("Returns Ok if promise resolves", async () => {
         const result: Result<number, Error> = await throwlessAsync(() => Promise.resolve(773));
