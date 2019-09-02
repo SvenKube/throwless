@@ -1,7 +1,7 @@
 # Throwless
 
 ## Description
-The `Result` and `Option` types from Rust ported to TypeScript.
+The `Result` and `Option` type from Rust ported to TypeScript.
 
 ## Installation
 ```
