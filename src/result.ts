@@ -32,6 +32,8 @@ export interface Result<T, E> {
 
     unwrapOr(value: T): T;
     unwrapOrElse(fn: (error: E) => T): T;
+
+    transform<U, F>(fnMap: (value: T) => U, fnMapErr: (error: E) => F ): Result<U, F>;
 }
 
 export class Ok<T, E> implements Result<T, E> {
@@ -108,6 +110,10 @@ export class Ok<T, E> implements Result<T, E> {
     mapOrElse<U>(fnMap: (value: T) => U, fnOrElse: (error: E) => U): U {
         return this.map(fnMap).unwrapOrElse(fnOrElse);
     }
+
+    transform<U, F>(fnMap: (value: T) => U, _fnMapErr: (error: E) => F ): Result<U, F> {
+        return ok(fnMap(this.value));
+    }
 }
 
 export class Err<T, E> implements Result<T, E> {
@@ -183,5 +189,9 @@ export class Err<T, E> implements Result<T, E> {
 
     mapOrElse<U>(fnMap: (value: T) => U, fnOrElse: (error: E) => U): U {
         return this.map(fnMap).unwrapOrElse(fnOrElse);
+    }
+
+    transform<U, F>(_fnMap: (value: T) => U, fnMapErr: (error: E) => F ): Result<U, F> {
+        return err(fnMapErr(this.error));
     }
 }
