@@ -1,5 +1,8 @@
 import {Option, some, none} from "./option";
 
+export const emptyOk = <E>(): Result<void, E> => new Ok(undefined);
+export const emptyErr = <T>(): Result<T, void> => new Err(undefined);
+
 export const ok = <T, E>(value: T): Result<T, E> => new Ok(value);
 export const err = <T, E>(error: E): Result<T, E> => new Err(error);
 

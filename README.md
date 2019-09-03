@@ -60,6 +60,9 @@ console.log(result.xor(result2)); // => Some(42)
 export const ok = <T, E>(value: T): Result<T, E> => new Ok(value);
 export const err = <T, E>(error: E): Result<T, E> => new Err(error);
 
+export const emptyOk = <E>(): Result<void, E> => new Ok(undefined);
+export const emptyErr = <T>(): Result<T, void> => new Err(undefined);
+
 export const some = <T>(value: T): Option<T> => new Some(value);
 export const none = <T>(): Option<T> => new None();
 ```
