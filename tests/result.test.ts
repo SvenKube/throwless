@@ -124,6 +124,13 @@ describe("Tests for Ok", () => {
        )).toEqual(773);
     });
 
+    test("transform() return ok() with the result of fnMap called with this.value", () => {
+        expect(result.transform(
+            value => value * 2,
+            error => error
+        )).toEqual(ok(773 * 2))
+    });
+
 });
 
 describe("Tests for Err", () => {
@@ -230,6 +237,13 @@ describe("Tests for Err", () => {
         expect(result.unwrapOrElse(
             (_error) => 1337
         )).toEqual(1337);
+    });
+
+    test("transform() returns err() with the result of fnMapErr called with this.error", () => {
+        expect(result.transform(
+            value => value * 2,
+            error => new Error("Matched: " + error.message)
+        )).toEqual(err(new Error("Matched: Some error")))
     });
 
 });
