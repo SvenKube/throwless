@@ -1,4 +1,23 @@
-import {ok, err, some, none, Result} from "../src";
+import {ok, err, some, none, Result, Ok, emptyOk, emptyErr, Err} from "../src";
+
+describe("Tests for helper", () => {
+
+    test("ok(value) returns an Ok with the value", () => {
+        expect(ok(773)).toEqual(new Ok(773));
+    });
+
+    test("emptyOk() returns an Ok without a value", () => {
+        expect(emptyOk()).toEqual(new Ok(undefined));
+    });
+
+    test("err() returns an Err with the error", () => {
+        expect(err(new Error("Some error"))).toEqual(new Err(new Error("Some error")));
+    });
+
+    test("emptyErr() returns an Err without an error", () => {
+        expect(emptyErr()).toEqual(new Err(undefined));
+    });
+});
 
 describe("Tests for Ok", () => {
 
