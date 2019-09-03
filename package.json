@@ -1,6 +1,6 @@
 {
   "name": "throwless",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Result and Option type from Rust ported to TypeScript.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
