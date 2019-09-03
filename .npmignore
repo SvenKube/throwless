@@ -6,7 +6,8 @@ node_modules/
 
 jest.config.js
 tsconfig.json
-
 .travis.yml
+
+coverage/
 
 .idea/
